@@ -1,9 +1,10 @@
+let send_user = "client1"
 
-const conn = peer.connect('client1')
+let conn = peer.connect(send_user)
 peer.on('connection', conn => {
-	console.log('他のクライアントからの接続あり')
+
 	conn.on('data', data => {
-		console.log(`client1からのメッセージ：${data}`);
+		alert(data)
 	});
 });
 conn.on('open',()=>{
@@ -11,3 +12,13 @@ conn.on('open',()=>{
     conn.send('こんにちは！')
 
 })
+const send_mess = (mess)=>{
+	let box = document.getElementById("box")
+
+	// peer.destroy();
+	if(conn){
+		conn.send(box.value)
+		// conn = null
+		
+	}
+}

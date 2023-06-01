@@ -9,14 +9,16 @@
 </head>
 <body>
     <script>
+        let domain = document.domain
         const peer = new Peer('client2', {
-            host: 'localhost',
+            host:domain,
             port: 9000,
             path: '/'
           });
     </script>
     <script src="../flont/main2.js"></script>
     <h1>tset2</h1>
-
+    <input type="text" id = "box">
+    <button onclick="send_mess()">send</button>
 </body>
 </html>
